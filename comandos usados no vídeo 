@@ -1,0 +1,5 @@
+comandos usados no vídeo:
+
+$ termux-setup-storage
+$ cd /sdcard/shizuku
+$ npm start
