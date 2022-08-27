@@ -17,9 +17,6 @@ const {
 
  // Configuração
  const settings = JSON.parse(fs.readFileSync('./settings/config.json'));
- // PREMIUMLIST
- const premium = JSON.parse(fs.readFileSync('./settings/premium.json'));
-
 
  async function connectToWhatsApp () {
   const {
@@ -29,7 +26,7 @@ const {
   const {
    state,
    saveState
-  } = useSingleFileAuthState(`./BarBar.json`);
+  } = useSingleFileAuthState(`./bar.json`);
 
   const sock = makeWASocket({
    printQRInTerminal: true,
@@ -50,7 +47,7 @@ const {
 
    if (connection === 'close') {
     const shouldReconnect = lastDisconnect.error?.output?.statusCode !== DisconnectReason.loggedOut
-    console.log(logs("Erro não suportado! Reconectando..."));
+    console.log(logs("Erro não suportado! Recomectando..."));
 
     if (shouldReconnect) {
      connectToWhatsApp();
